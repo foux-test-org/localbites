@@ -1,0 +1,176 @@
+.container {
+  background: #1a1d23;
+  background-image: none;
+  padding: 32px 24px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.trigger:hover, .trigger:active {
+  background: #2c3140;
+}
+
+.triggerLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8eaf0;
+  line-height: 1.6;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  color: #e8eaf0;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.trigger[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.menu {
+  display: none;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.32);
+  overflow: hidden;
+}
+
+.menu.isOpen {
+  display: block;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  border-bottom: 1px solid #3a3f4b;
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background: #23272f;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition);
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #2c3140;
+}
+
+.panelHeader span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8eaf0;
+  line-height: 1.6;
+}
+
+.panelChevron {
+  display: inline-block;
+  transform-origin: center;
+  color: #e8eaf0;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.panelHeader.isSelected .panelChevron {
+  transform: rotate(180deg);
+}
+
+.panelBody {
+  display: none;
+  background: #1e2128;
+  border-top: 1px solid #3a3f4b;
+}
+
+.panelBody.isVisible {
+  display: block;
+}
+
+.bodyText {
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9aa0b0;
+  line-height: 1.6;
+}
+
+.btnRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 24px 16px 24px;
+}
+
+.btnCancel {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a9eff;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a9eff;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
