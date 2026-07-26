@@ -1,0 +1,163 @@
+.container {
+  background: #1a1a2e;
+  background-image: none;
+  padding: 32px 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #23233a;
+  border: 1px solid #3a3a55;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #e0e0e0;
+  transition: background 0.2s ease;
+}
+
+.trigger:hover, .trigger:active {
+  background: #2c2c4a;
+}
+
+.triggerIcon {
+  font-size: 12px;
+  color: #a0a0b8;
+  transition: transform 0.2s ease;
+}
+
+.trigger.isOpen .triggerIcon {
+  transform: rotate(180deg);
+}
+
+.menu {
+  width: 100%;
+  background: #23233a;
+  border: 1px solid #3a3a55;
+  border-radius: 8px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.menu.isOpen {
+  visibility: visible;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel + .panel {
+  border-top: 1px solid #3a3a55;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #23233a;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #e0e0e0;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #2c2c4a;
+}
+
+.chevron {
+  font-size: 16px;
+  color: #a0a0b8;
+}
+
+.panelBody {
+  background: #1e1e35;
+  border-top: 1px solid #3a3a55;
+  padding: 16px 24px;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: none;
+}
+
+.panelBody.isOpen {
+  visibility: visible;
+  height: auto;
+}
+
+.bodyText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #a0a0b8;
+}
+
+.actionsBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.btnCancel {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
