@@ -1,0 +1,166 @@
+.container {
+  background: #1a1d23;
+  background-image: none;
+  padding: 32px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.inner {
+  max-width: 520px;
+  width: 100%;
+}
+
+.menuTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  padding: 16px 24px;
+  cursor: pointer;
+  color: #e8eaf0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  transition: background 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.menuTrigger:hover, .menuTrigger:active {
+  background: #2c3140;
+}
+
+.menuLabel {
+  color: #e8eaf0;
+}
+
+.menuChevron {
+  color: #a0a8b8;
+  font-size: 0.75rem;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.accordionGroup {
+  display: none;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.35);
+  list-style-type: none;
+}
+
+.accordionGroup.isOpen {
+  display: block;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #23272f;
+  border: none;
+  border-bottom: 1px solid #3a3f4b;
+  padding: 16px 24px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #2c3140;
+}
+
+.panelTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #e8eaf0;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  color: #a0a8b8;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.panelHeader[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.panelBody {
+  display: none;
+  background: #1e2128;
+  border-bottom: 1px solid #3a3f4b;
+}
+
+.panelBody.isVisible {
+  display: block;
+}
+
+.bodyText {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #8a92a6;
+  padding: 16px 24px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 16px 24px;
+}
+
+.cancelBtn {
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color 0.15s ease;
+}
+
+.cancelBtn:hover, .cancelBtn:active {
+  color: #7ab8ff;
+}
+
+.agreeBtn {
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color 0.15s ease;
+}
+
+.agreeBtn:hover, .agreeBtn:active {
+  color: #7ab8ff;
+}
+
+.panelBody:last-child {
+  border-bottom: none;
+}
