@@ -1,43 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Hero.module.css';
+import { FouxDropAccTest } from "./FouxDropAccTest";
 
 export function Hero(): React.ReactNode {
+    // FOUX_TODO: replace with real trigger label
+    const fouxTriggerLabel = 'Menu';
+    // FOUX_TODO: replace with real section data
+    const fouxSections: AccordionSection[] = [
+      { title: 'Section 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Section 2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Actions', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', hasActions: true },
+    ];
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
 
+  // FOUX_TODO: possibly unused after this change
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>): void {
     setSearchValue(e.target.value);
   }
+  // FOUX_TODO: end
 
+  // FOUX_TODO: possibly unused after this change
   function handleSearchSubmit(e: React.FormEvent): void {
     e.preventDefault();
     if (searchValue.trim()) {
       navigate(`/restaurants?search=${encodeURIComponent(searchValue.trim())}`);
     }
   }
+  // FOUX_TODO: end
 
   return (
     <section className={styles.hero}>
-      <div className={styles.content}>
-        <h1 className={styles.headline}>Discover Local Flavors</h1>
-        <p className={styles.subtitle}>
-          Find the best restaurants in your neighborhood. From cozy cafes to hidden gems,
-          your next favorite meal is just around the corner.
-        </p>
-        <form className={styles.searchBar} onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            className={styles.searchInput}
-            placeholder="Search restaurants, cuisines..."
-            value={searchValue}
-            onChange={handleSearchChange}
-          />
-          <button type="submit" className={styles.searchButton}>
-            Search
-          </button>
-        </form>
-      </div>
-    </section>
+            <FouxDropAccTest
+              triggerLabel={fouxTriggerLabel}
+              sections={fouxSections}
+              onCancel={() => {} /* FOUX_TODO: wire cancel action */}
+              onAgree={() => {} /* FOUX_TODO: wire agree action */}
+            />
+          </section>
   );
 }
