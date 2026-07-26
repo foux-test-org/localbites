@@ -1,0 +1,153 @@
+.container {
+  background: #1a1d23;
+  background-image: none;
+  padding: 24px;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.inner {
+  max-width: 100%;
+  width: 100%;
+}
+
+.menuTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #fff;
+  transition: background var(--transition);
+}
+
+.menuTrigger:hover, .menuTrigger:active {
+  background: #2c3140;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+  font-size: 12px;
+  color: #fff;
+}
+
+.menuTrigger.isOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.menu {
+  display: none;
+  margin-top: 8px;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.menu.isOpen {
+  display: block;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #23272f;
+  border: none;
+  border-bottom: 1px solid #3a3f4b;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #fff;
+  text-align: left;
+  transition: background var(--transition);
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #2c3140;
+}
+
+.panelChevron {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+  font-size: 16px;
+  color: #aab0bc;
+}
+
+.panelHeader.isSelected .panelChevron {
+  transform: rotate(180deg);
+}
+
+.panelBody {
+  display: none;
+  background: #1e2128;
+  border-bottom: 1px solid #3a3f4b;
+  padding: 16px;
+}
+
+.panelBody.isVisible {
+  display: block;
+}
+
+.bodyText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #8a909e;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.cancelBtn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid #3a3f4b;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.cancelBtn:hover, .cancelBtn:active {
+  color: #7ab8ff;
+}
+
+.agreeBtn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4a9eff;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.agreeBtn:hover, .agreeBtn:active {
+  color: #7ab8ff;
+}
