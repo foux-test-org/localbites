@@ -1,0 +1,177 @@
+.container {
+  background: #1a1d23;
+  background-image: none;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.trigger:hover, .trigger:active {
+  background: #2c3140;
+}
+
+.triggerLabel {
+  color: #fff;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.trigger[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #23272f;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 0s 300ms;
+}
+
+.menu.isOpen {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms ease, visibility 0s 0s;
+}
+
+.accordion {
+  width: 100%;
+}
+
+.section {
+  border-bottom: 1px solid #3a3f4b;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #23272f;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sectionHeader:hover, .sectionHeader:active {
+  background: #2c3140;
+}
+
+.sectionChevron {
+  display: inline-block;
+  transform-origin: center;
+  font-size: 1rem;
+  color: #aab0be;
+  transform: rotate(180deg);
+}
+
+.sectionHeader:not(.isSelected) .sectionChevron {
+  transform: rotate(0deg);
+}
+
+.sectionBody {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  background: #1e2128;
+  border-top: 1px solid #3a3f4b;
+}
+
+.sectionBody.isVisible {
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+  padding: 1rem 1.5rem;
+}
+
+.bodyText {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #9aa0ae;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 1rem;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  border-radius: 4px;
+  padding: 0.4rem 1.25rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.btnCancel {
+  background: transparent;
+  border: none;
+  color: #4a9eff;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  background: transparent;
+  border: none;
+  color: #4a9eff;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
