@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxSingleAccTest } from "../components/FouxSingleAccTest/FouxSingleAccTest";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,24 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with real FAQ content
+    const faqItems = [
+      {
+        id: 'shipping',
+        question: 'What are your shipping options?',
+        answer: 'We offer standard (5-7 days), express (2-3 days), and overnight shipping. Free shipping on international orders.',
+      },
+      {
+        id: 'returns',
+        question: 'What is your return policy?',
+        answer: 'Our return policy allows returns within 30 days of purchase for a full refund. Items must be in original condition.',
+      },
+      {
+        id: 'support',
+        question: 'How can I contact customer support?',
+        answer: 'You can reach our customer support team via email at support@example.com or by phone at 1-800-555-0100, available Monday through Friday, 9am–5pm.',
+      },
+    ];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +56,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxSingleAccTest items={faqItems} />
 
       <section className={styles.section}>
         <div className={styles.container}>
