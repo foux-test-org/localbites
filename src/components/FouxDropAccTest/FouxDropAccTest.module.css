@@ -1,0 +1,173 @@
+.container {
+  background: #13151a;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #1e2028;
+  border: 1px solid #3a3d4a;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8eaf0;
+  line-height: 1.6;
+}
+
+.trigger:hover, .trigger:active {
+  background: #26293a;
+}
+
+.triggerIcon {
+  font-size: 0.75rem;
+  color: #a0a4b8;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #1e2028;
+  border: 1px solid #3a3d4a;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 500ms;
+}
+
+.menu.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 0s;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #1e2028;
+  border: none;
+  border-bottom: 1px solid #2e3140;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8eaf0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #26293a;
+}
+
+.panelHeaderLast {
+  border-bottom: 1px solid #2e3140;
+}
+
+.chevron {
+  font-size: 1rem;
+  color: #a0a4b8;
+  line-height: 1;
+}
+
+.panelBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.panelBody.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+.inner {
+  padding: 16px 24px;
+  background: #181a22;
+  border-bottom: 1px solid #2e3140;
+}
+
+.inner p {
+  font-size: 1rem;
+  color: #9095a8;
+  line-height: 1.6;
+}
+
+.innerActions {
+  padding-bottom: 16px;
+}
+
+.btnRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.btnCancel {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4a9eff;
+  line-height: 1.6;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4a9eff;
+  line-height: 1.6;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
+
+.panelBody > * {
+  overflow: hidden;
+  min-height: 0;
+}
