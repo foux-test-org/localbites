@@ -1,0 +1,102 @@
+.container {
+  background: #171717;
+  background-image: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tablistContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  background: #262626;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  text-align: left;
+  justify-content: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #555555;
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #888888;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.tab:hover, .tab:active {
+  color: #e0e0e0;
+}
+
+.tab.isSelected {
+  background: #2f2f2f;
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666666;
+}
+
+.tab.isSelected:hover {
+  color: #1a1a1a;
+}
+
+.panels {
+  display: grid;
+  width: 100%;
+}
+
+.panel {
+  grid-area: 1 / 1;
+  background: #171717;
+  border-radius: 16px;
+  padding: 24px;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  justify-content: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #555555;
+}
+
+.panel.isVisible {
+  visibility: visible;
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.panelBody {
+  font-size: 0.95rem;
+  color: #aaaaaa;
+  line-height: 1.6;
+}
