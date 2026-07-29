@@ -1,0 +1,185 @@
+.container {
+  background: #13161b;
+  background-image: none;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+}
+
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: #1c1f26;
+  border: 1px solid #3a3d4d;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  transition: background var(--transition);
+  text-align: left;
+  border-color: #555555;
+}
+
+.trigger:hover {
+  background: #2d3044;
+}
+
+.triggerLabel {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.triggerArrow {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #13161b;
+  border: 1px solid #3a3d4d;
+  border-radius: 8px;
+  z-index: 100;
+  overflow: hidden;
+  list-style-type: none;
+  text-align: left;
+  justify-content: flex-start;
+  border-color: #4a5568;
+}
+
+.menu.isOpen {
+  display: block;
+}
+
+.panel {
+  border-bottom: 1px solid #3a3d4d;
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: #13161b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: left;
+  transition: background var(--transition);
+}
+
+.panelHeader:hover {
+  background: #252836;
+}
+
+.chevron {
+  font-size: 1rem;
+  color: #aaaaaa;
+  line-height: 1;
+}
+
+#drop-acc-test-section1, #drop-acc-test-section2, #drop-acc-test-actions {
+  display: none;
+}
+
+#drop-acc-test-section1.isOpen, #drop-acc-test-section2.isOpen, #drop-acc-test-actions.isOpen {
+  display: block;
+}
+
+.panelClip {
+  overflow: hidden;
+}
+
+.panelBody {
+  padding: 16px;
+  background: #1e2130;
+  border-top: 1px solid #3a3d4d;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #8a8d9e;
+}
+
+.panelBodyActions {
+  padding-bottom: 16px;
+}
+
+.btnRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  text-align: right;
+}
+
+.btnCancel {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #8899bb;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+  text-align: center;
+  justify-content: center;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #7799dd;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+  text-align: center;
+  justify-content: center;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
