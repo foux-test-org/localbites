@@ -1,0 +1,118 @@
+.container {
+  background: #1e1e1e;
+  border-radius: 0;
+  border: 1px solid #2e2e2e;
+  padding: 16px;
+  flex-direction: column;
+  gap: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #1e1e1e;
+  border-radius: 0;
+  border: none;
+  padding: 16px 16px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  justify-content: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4a5568;
+}
+
+.header:hover, .header:active {
+  background: #2e2e2e;
+}
+
+.headerLabel {
+  flex: 1;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  margin-left: auto;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.header[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.header2 {
+  margin-top: 16px;
+}
+
+.headerActions {
+  margin-top: 16px;
+}
+
+#acc-panel-1, #acc-panel-2, #acc-panel-actions {
+  overflow: hidden;
+  display: none;
+}
+
+#acc-panel-1.isVisible, #acc-panel-2.isVisible, #acc-panel-actions.isVisible {
+  display: block;
+}
+
+.body {
+  background: #252525;
+  padding: 0px 16px 16px 16px;
+  border-radius: 0;
+  color: #cccccc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.actionsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0px 0px 0px;
+  margin-top: 16px;
+}
+
+.cancelBtn, .agreeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5b9bd5;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.cancelBtn:hover, .cancelBtn:active, .agreeBtn:hover, .agreeBtn:active {
+  color: #ffffff;
+}
+
+.cancelBtn {
+  font-weight: 700;
+  text-align: right;
+  justify-content: flex-end;
+  color: #90caf9;
+}
+
+.agreeBtn {
+  font-weight: 700;
+  text-align: right;
+  justify-content: flex-end;
+  color: #90caf9;
+}
