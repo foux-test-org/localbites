@@ -1,0 +1,109 @@
+.container {
+  background: #030712;
+  padding: 16px 24px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 9999px;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.6;
+  transition: filter 0.15s ease, background-color 0.15s ease;
+  font-family: inherit;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnDefault {
+  background: #175dfb;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.btnSecondary {
+  background: #1d2937;
+  color: #a0a8b8;
+  font-weight: 400;
+  border-radius: 9999px;
+}
+
+.btnTertiary {
+  background: #101727;
+  color: #a0a8b8;
+  font-weight: 400;
+  border-radius: 9999px;
+}
+
+.btnSuccess {
+  background: #009865;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.btnDanger {
+  background: #c70136;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.btnWarning {
+  background: #f54901;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.btnDark {
+  background: #1d2937;
+  color: #ffffff;
+  font-weight: 400;
+  border-radius: 9999px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #555555;
+}
+
+.btn:hover, .btn:active, .btn.isSelected {
+  filter: brightness(1.2);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.ghost {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  color: #a0a8b8;
+  background: none;
+}
