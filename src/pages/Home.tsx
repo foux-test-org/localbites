@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxTabsTest } from "../components/FouxTabsTest/FouxTabsTest";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,41 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with real tab data
+    const fouxTabsTestTabs: import('../components/FouxTabsTest/FouxTabsTest').TabItem[] = [
+      {
+        label: 'Overview',
+        title: 'Overview',
+        bodyLines: [
+          'View your key metrics and recent project activity. Track progress across all your active projects.',
+          'You have 12 active projects and 3 pending tasks.',
+        ],
+      },
+      {
+        label: 'Analytics',
+        title: 'Analytics',
+        bodyLines: [
+          'Explore detailed analytics and performance data for your projects.',
+          'Track trends, usage patterns, and key performance indicators.',
+        ],
+      },
+      {
+        label: 'Reports',
+        title: 'Reports',
+        bodyLines: [
+          'Generate and review reports for your team and stakeholders.',
+          'Export data in multiple formats for further analysis.',
+        ],
+      },
+      {
+        label: 'Settings',
+        title: 'Settings',
+        bodyLines: [
+          'Configure your workspace preferences and account settings.',
+          'Manage team members, permissions, and integrations.',
+        ],
+      },
+    ];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +73,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxTabsTest tabs={fouxTabsTestTabs} />
 
       <section className={styles.section}>
         <div className={styles.container}>
