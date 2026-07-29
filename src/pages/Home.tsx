@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccTest } from "../components/FouxDropAccTest/FouxDropAccTest";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,14 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with real label
+    const fouxDropAccTestLabel = 'Menu';
+    // FOUX_TODO: replace with real section data
+    const fouxDropAccTestSections = [
+      { title: 'Section 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Section 2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Actions',   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    ];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +46,12 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccTest
+                  label={fouxDropAccTestLabel}
+                  sections={fouxDropAccTestSections}
+                  onCancel={() => {} /* FOUX_TODO: wire cancel action */}
+                  onAgree={() => {} /* FOUX_TODO: wire agree action */}
+                />
 
       <section className={styles.section}>
         <div className={styles.container}>
