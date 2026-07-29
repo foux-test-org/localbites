@@ -1,0 +1,182 @@
+.container {
+  background: #13161b;
+  background-image: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1c1f26;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  border-color: #555555;
+}
+
+.trigger:hover, .trigger:active {
+  background: #2c313c;
+}
+
+.triggerLabel {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.triggerCaret {
+  display: inline-block;
+  transform-origin: center;
+  font-size: 0.75rem;
+  color: #aaaaaa;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #13161b;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  justify-content: flex-start;
+  border-color: #4a5568;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 500ms;
+}
+
+.menu.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 0s;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #13161b;
+  border: none;
+  border-bottom: 1px solid #3a3f4b;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.panelHeader:hover, .panelHeader:active {
+  background: #2c313c;
+}
+
+.chevron {
+  display: inline-block;
+  transform-origin: center;
+  font-size: 1rem;
+  color: #aaaaaa;
+  transform: rotate(0deg);
+}
+
+.panelHeader.isSelected .chevron {
+  transform: rotate(180deg);
+}
+
+.panelRegion {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.panelRegion.isVisible {
+  grid-template-rows: 1fr;
+}
+
+.panelBody {
+  background: #23272f;
+  border-bottom: 1px solid #3a3f4b;
+  padding: 16px;
+  color: #9aa0ad;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.panelBodyActions {
+  padding-bottom: 16px;
+}
+
+.btnRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+  text-align: right;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnCancel {
+  background: transparent;
+  border: none;
+  color: #8ca8d6;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  background: transparent;
+  border: none;
+  color: #8ca8d6;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
+
+.panelRegion > * {
+  overflow: hidden;
+  min-height: 0;
+}
