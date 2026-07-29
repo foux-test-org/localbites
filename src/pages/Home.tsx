@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxColorButtonGroup } from "../components/FouxColorButtonGroup/FouxColorButtonGroup";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -37,7 +38,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxColorButtonGroup />
 
       <section className={styles.section}>
         <div className={styles.container}>
