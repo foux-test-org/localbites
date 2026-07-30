@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxTabNorm } from "../components/FouxTabNorm/FouxTabNorm";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,41 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with real tab content
+    const fouxTabNormTabs: import('../components/FouxTabNorm/FouxTabNorm').TabItem[] = [
+      {
+        label: 'Overview',
+        panelTitle: 'Overview',
+        bodyLines: [
+          'View your key metrics and recent project activity. Track progress across all your active projects.',
+          'You have 12 active projects and 3 pending tasks.',
+        ],
+      },
+      {
+        label: 'Analytics',
+        panelTitle: 'Analytics',
+        bodyLines: [
+          'Explore detailed analytics and performance data for your projects.',
+          'Track trends, conversions, and engagement metrics in real time.',
+        ],
+      },
+      {
+        label: 'Reports',
+        panelTitle: 'Reports',
+        bodyLines: [
+          'Generate and download reports for your team and stakeholders.',
+          'Schedule automated reports or create custom ones on demand.',
+        ],
+      },
+      {
+        label: 'Settings',
+        panelTitle: 'Settings',
+        bodyLines: [
+          'Manage your account preferences, integrations, and team permissions.',
+          'Customize notifications and configure your workspace settings.',
+        ],
+      },
+    ];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +73,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxTabNorm tabs={fouxTabNormTabs} />
 
       <section className={styles.section}>
         <div className={styles.container}>
