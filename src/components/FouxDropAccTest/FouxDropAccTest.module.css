@@ -1,0 +1,180 @@
+.container {
+  background: #13161b;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+}
+
+.triggerWrap {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #1c1f26;
+  border: 1px solid #2e3248;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: left;
+  border-color: #555555;
+}
+
+.triggerIcon {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 500ms;
+}
+
+.menu.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 0s;
+}
+
+.panel {
+  background: #13161b;
+  border: 1px solid #2e3248;
+  border-radius: 8px;
+  overflow: hidden;
+  border-color: #4a5568;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #2e3248;
+}
+
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.panelHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #13161b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: left;
+}
+
+.chevron {
+  font-size: 16px;
+  color: #aaaaaa;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.body.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.bodyInner {
+  padding: 16px;
+  background: #13161b;
+  border-top: 1px solid #2e3248;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4a5568;
+}
+
+.bodyText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #8899aa;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btnCancel {
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #8899cc;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnCancel:hover, .btnCancel:active {
+  color: #7ab8ff;
+}
+
+.btnAgree {
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #8899cc;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnAgree:hover, .btnAgree:active {
+  color: #7ab8ff;
+}
+
+.menu {
+  display: block;
+}
+
+.body > * {
+  overflow: hidden;
+  min-height: 0;
+}
