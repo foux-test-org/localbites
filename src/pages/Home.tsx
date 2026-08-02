@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxAccsixhundredheight } from "../components/FouxAccsixhundredheight/FouxAccsixhundredheight";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,24 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace placeholder accordion section data with real content
+    const fouxAccSections = [
+      {
+        title: 'Accordion 1',
+        bodyText:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      },
+      {
+        title: 'Accordion 2',
+        bodyText:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      },
+      {
+        title: 'Accordion Actions',
+        bodyText:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      },
+    ];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +56,11 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxAccsixhundredheight
+                  sections={fouxAccSections}
+                  onCancel={() => {} /* FOUX_TODO: wire cancel action */}
+                  onAgree={() => {} /* FOUX_TODO: wire agree action */}
+                />
 
       <section className={styles.section}>
         <div className={styles.container}>
