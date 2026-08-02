@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxAccDefaultFillHug } from "../components/FouxAccDefaultFillHug/FouxAccDefaultFillHug";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,16 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace placeholder accordion section data with real content
+    const fouxAccSections: [import('../components/FouxAccDefaultFillHug/FouxAccDefaultFillHug').AccordionSection, import('../components/FouxAccDefaultFillHug/FouxAccDefaultFillHug').AccordionSection, import('../components/FouxAccDefaultFillHug/FouxAccDefaultFillHug').AccordionSection] = [
+      { title: 'Accordion 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.' },
+      { title: 'Accordion 2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.' },
+      { title: 'Accordion Actions', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.' },
+    ];
+    // FOUX_TODO: wire cancel action
+    const fouxAccOnCancel = () => {};
+    // FOUX_TODO: wire agree action
+    const fouxAccOnAgree = () => {};
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +48,11 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxAccDefaultFillHug
+                  sections={fouxAccSections}
+                  onCancel={fouxAccOnCancel}
+                  onAgree={fouxAccOnAgree}
+                />
 
       <section className={styles.section}>
         <div className={styles.container}>
