@@ -1,0 +1,152 @@
+.container {
+  background: #0e0f13;
+  background-image: none;
+  padding: 24px;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+}
+
+.menuTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.menuLabel {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.menuArrow, .chevron {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.menuTrigger.isOpen .menuArrow, .sectionHeader.isOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 8px;
+  background: #13161b;
+  border: 1px solid #2c2f34;
+  border-radius: 0px;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 500ms;
+}
+
+.dropdown.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 0s;
+}
+
+.section {
+  width: 100%;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 16px 16px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.sectionHeaderText {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.sectionBody {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.sectionBody.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.bodyInner {
+  padding: 0px 16px 16px 16px;
+}
+
+.bodyText {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.divider {
+  background: #3e4148;
+  height: 1px;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.cancelBtn, .agreeBtn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #79b0ff;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cancelBtn:hover, .cancelBtn:active, .agreeBtn:hover, .agreeBtn:active {
+  color: #b8d4ff;
+}
+
+.sectionBody > * {
+  overflow: hidden;
+  min-height: 0;
+}
