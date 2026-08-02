@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccGenContract } from "../components/FouxDropAccGenContract/FouxDropAccGenContract";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,16 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace placeholder strings with real contract copy
+    const fouxMenuLabel = 'Menu';
+    const fouxSection1Body = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    const fouxSection2Body = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    const fouxActionsBody = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    const fouxCancelLabel = 'CANCEL';
+    const fouxAgreeLabel = 'AGREE';
+    // FOUX_TODO: wire to real cancel/agree handlers
+    const fouxOnCancel = () => {};
+    const fouxOnAgree = () => {};
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +48,16 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccGenContract
+                  menuLabel={fouxMenuLabel}
+                  section1Body={fouxSection1Body}
+                  section2Body={fouxSection2Body}
+                  actionsBody={fouxActionsBody}
+                  cancelLabel={fouxCancelLabel}
+                  agreeLabel={fouxAgreeLabel}
+                  onCancel={fouxOnCancel}
+                  onAgree={fouxOnAgree}
+                />
 
       <section className={styles.section}>
         <div className={styles.container}>
