@@ -1,0 +1,150 @@
+.container {
+  background: #0e0f13;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.menuTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menuLabel {
+  font-size: 21px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.menuArrow, .sectionChevron {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.panelsContainer {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 500ms;
+}
+
+.panelsContainer.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 500ms ease, transform 500ms ease, visibility 0s 0s;
+}
+
+.accordion {
+  width: 100%;
+  background: #13161b;
+  border: 1px solid #2c2f34;
+}
+
+.section, .bodyClip {
+  width: 100%;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionLabel {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.divider {
+  background: #2c2f34;
+  height: 1px;
+  width: 100%;
+}
+
+.bodyRegion {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 500ms ease;
+}
+
+.bodyRegion.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.bodyInner {
+  padding: 0px 16px 16px 16px;
+  margin-top: 8px;
+}
+
+.bodyText {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.actionsInner {
+  padding: 0px 16px 16px 16px;
+}
+
+.actionsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cancelBtn, .agreeBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #79b0ff;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cancelBtn:hover, .cancelBtn:active, .agreeBtn:hover, .agreeBtn:active {
+  color: #a8c8ff;
+}
+
+.bodyRegion > * {
+  overflow: hidden;
+  min-height: 0;
+}
