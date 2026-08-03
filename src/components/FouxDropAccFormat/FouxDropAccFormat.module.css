@@ -1,0 +1,162 @@
+.container {
+  background: #0e0f13;
+  background-image: none;
+  padding: 24px;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+}
+
+.dropdownBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  color: #e6e9ee;
+}
+
+.menuLabel {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.dropdownArrow {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.dropdownBar.isOpen .dropdownArrow, .sectionHeader[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.dropAccMenuPanel {
+  width: 100%;
+  background: #13161b;
+  border: 1px solid #2c2f34;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+}
+
+.dropAccMenuPanel.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 0s;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e6e9ee;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.chevron {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.divider {
+  background: #2c2f34;
+  height: 1px;
+  border: none;
+  width: 100%;
+}
+
+.dropAccSection {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.dropAccSection.isSelected {
+  grid-template-rows: 1fr;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+.sectionBodyInner {
+  padding: 16px;
+  border-top: 1px solid #2c2f34;
+}
+
+.bodyText {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.actionsBody {
+  padding-bottom: 0;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 24px 0 0 0;
+  padding-bottom: 0;
+}
+
+.cancelBtn, .agreeBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #79b0ff;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cancelBtn:hover, .cancelBtn:active, .agreeBtn:hover, .agreeBtn:active {
+  color: #b8d4ff;
+}
+
+.dropAccSection > * {
+  overflow: hidden;
+  min-height: 0;
+}
