@@ -1,0 +1,150 @@
+.container {
+  background: #0e0f13;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.menuDropdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #e6e9ee;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.menuArrow {
+  color: #9c9fa6;
+  font-size: 16px;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.menuDropdown.isOpen .menuArrow {
+  transform: rotate(180deg);
+}
+
+.dropdownPanel {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  margin-top: 8px;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+}
+
+.dropdownPanel.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 0s;
+}
+
+.accordion {
+  background: #13161b;
+  border: 1px solid #2c2f34;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  color: #e6e9ee;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.sectionArrow {
+  color: #9c9fa6;
+  font-size: 16px;
+  display: inline-block;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.sectionHeader:not(.isOpen) .sectionArrow {
+  transform: rotate(0deg);
+}
+
+.sectionRegion {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.sectionRegion.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.sectionInner {
+  padding: 0px 16px 16px 16px;
+}
+
+.sectionBodyText {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.divider {
+  background: #2c2f34;
+  height: 1px;
+  width: 100%;
+}
+
+.actionsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cancelBtn, .agreeBtn {
+  background: none;
+  border: none;
+  color: #79b0ff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sectionRegion > * {
+  overflow: hidden;
+  min-height: 0;
+}
