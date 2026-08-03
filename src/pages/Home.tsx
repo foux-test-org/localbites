@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccCommentFormat } from "../components/FouxDropAccCommentFormat/FouxDropAccCommentFormat";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,21 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with real menu label
+    const heroMenuLabel = "Menu";
+
+    // FOUX_TODO: replace with real accordion sections
+    const heroSections = [
+      { title: 'Section 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Section 2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Actions', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    ];
+
+    // FOUX_TODO: wire this up
+    const handleHeroCancel = useCallback(() => {}, []);
+
+    // FOUX_TODO: wire this up
+    const handleHeroAgree = useCallback(() => {}, []);
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +53,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccCommentFormat menuLabel={heroMenuLabel} sections={heroSections} onCancel={handleHeroCancel} onAgree={handleHeroAgree} />
 
       <section className={styles.section}>
         <div className={styles.container}>
