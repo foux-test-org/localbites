@@ -1,0 +1,152 @@
+.container {
+  background: #0e0f13;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.menuDropdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #e6e9ee;
+}
+
+.menuLabel {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.menuArrow {
+  font-size: 16px;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.menuDropdown.isOpen .menuArrow {
+  transform: rotate(180deg);
+}
+
+.accordionPanel {
+  width: 100%;
+  background: #13161b;
+  border: 1px solid #2c2f34;
+  border-radius: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+}
+
+.accordionPanel.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 0s;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.sectionArrow {
+  font-size: 16px;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.sectionHeader:not(.isOpen) .sectionArrow {
+  transform: rotate(0deg);
+}
+
+.sectionBodyRegion {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.sectionBodyRegion.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.sectionInner {
+  padding: 0px 16px 16px 16px;
+}
+
+.sectionBodyText {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #2c2f34;
+}
+
+.buttonsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0px 0px 0px;
+}
+
+.cancelBtn, .agreeBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #79b0ff;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sectionBodyRegion > * {
+  overflow: hidden;
+  min-height: 0;
+}
