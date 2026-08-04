@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxAccDropDescriptionRequiredCallbacks } from "../components/FouxAccDropDescriptionRequiredCallbacks/FouxAccDropDescriptionRequiredCallbacks";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,23 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real menu label for the dropdown trigger
+    const heroMenuLabel = 'Menu';
+
+    // FOUX_TODO: replace with the real section list — title and body per section
+    const heroSections = [
+      { title: 'Section 1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+      { title: 'Section 2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    ];
+
+    // FOUX_TODO: replace with the real actions section — title and body
+    const heroActionsSection = { title: 'Actions', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' };
+
+    // FOUX_TODO: wire up what the Cancel button should do when clicked
+    const handleHeroCancel = useCallback(() => {}, []);
+
+    // FOUX_TODO: wire up what the Agree button should do when clicked
+    const handleHeroAgree = useCallback(() => {}, []);
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +55,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxAccDropDescriptionRequiredCallbacks menuLabel={heroMenuLabel} sections={heroSections} actionsSection={heroActionsSection} onCancel={handleHeroCancel} onAgree={handleHeroAgree} />
 
       <section className={styles.section}>
         <div className={styles.container}>
