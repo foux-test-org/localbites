@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccCallbacksB } from "../components/FouxDropAccCallbacksB/FouxDropAccCallbacksB";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,46 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown menu trigger label
+    const fouxDropMenuLabel = "Menu";
+
+    // FOUX_TODO: replace with the real accordion sections — each needs id, title, body, and optional controls array (each control needs id, label, ariaLabel, onPress)
+    const fouxDropSections: import('../components/FouxDropAccCallbacksB/FouxDropAccCallbacksB').AccordionSection[] = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      },
+      {
+        id: 'section-actions',
+        title: 'Actions',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        controls: [
+          {
+            id: 'cancel',
+            label: 'CANCEL',
+            ariaLabel: 'Cancel',
+
+            // FOUX_TODO: wire up what the Cancel button should do when clicked (e.g. dispatch a cancel action to the store)
+            onPress: () => {},
+          },
+          {
+            id: 'agree',
+            label: 'AGREE',
+            ariaLabel: 'Agree',
+
+            // FOUX_TODO: wire up what the Agree button should do when clicked (e.g. dispatch an agree/confirm action to the store)
+            onPress: () => {},
+          },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +78,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccCallbacksB menuLabel={fouxDropMenuLabel} sections={fouxDropSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
