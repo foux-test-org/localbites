@@ -1,0 +1,161 @@
+.container {
+  background: #0e0f13;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+}
+
+.menuBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1f26;
+  border: 1px solid #2c2f34;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.menuLabel {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.dropdownArrow {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.menuBar.isOpen .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.accordionPanel {
+  width: 100%;
+  background: #13161b;
+  border: 1px solid #2c2f34;
+  border-radius: 0px;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 100;
+  display: block;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+}
+
+.accordionPanel.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 0s;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #e6e9ee;
+}
+
+.chevron {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9c9fa6;
+  display: inline-block;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.sectionHeader[aria-expanded="false"] .chevron {
+  transform: rotate(0deg);
+}
+
+.sectionRegion {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.sectionRegion.isSelected {
+  grid-template-rows: 1fr;
+}
+
+.clip {
+  overflow: hidden;
+}
+
+.sectionInner {
+  padding: 0px 16px 16px 16px;
+}
+
+.bodyText {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #888b92;
+  margin-top: 8px;
+}
+
+.divider {
+  background: #3e4148;
+  height: 1px;
+  width: 100%;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 8px 0px;
+  margin-top: 16px;
+}
+
+.cancelBtn, .agreeBtn {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #79b0ff;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sectionRegion > * {
+  overflow: hidden;
+  min-height: 0;
+}
