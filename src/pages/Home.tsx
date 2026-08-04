@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccCallbackC } from "../components/FouxDropAccCallbackC/FouxDropAccCallbackC";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,49 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real menu trigger label
+    const fouxMenuLabel = "Menu";
+
+    // FOUX_TODO: replace with the real accordion sections — { id, title, body, startsOpen, actions?: [{ id, label, variant, onPress }] }
+    const fouxSections = [
+      {
+        id: "section-1",
+        title: "Section 1",
+        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        startsOpen: false,
+      },
+      {
+        id: "section-2",
+        title: "Section 2",
+        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        startsOpen: true,
+      },
+      {
+        id: "section-actions",
+        title: "Actions",
+        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        startsOpen: true,
+        actions: [
+          {
+            id: "cancel",
+            label: "CANCEL",
+            variant: "cancel" as const,
+
+            // FOUX_TODO: wire up what the Cancel button should do when clicked (call the store to cancel)
+            onPress: () => {},
+          },
+          {
+            id: "agree",
+            label: "AGREE",
+            variant: "agree" as const,
+
+            // FOUX_TODO: wire up what the Agree button should do when clicked (call the store to confirm)
+            onPress: () => {},
+          },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +81,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccCallbackC menuLabel={fouxMenuLabel} sections={fouxSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
