@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccFigmaI } from "../components/FouxDropAccFigmaI/FouxDropAccFigmaI";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,37 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown label
+    const fouxDropLabel = 'Menu';
+
+    // FOUX_TODO: replace with the real accordion sections — id, title, body, startsOpen, and optional actions array (each action: id, label, variant 'cancel'|'agree', onPress)
+    const fouxDropSections = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: false,
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+      },
+      {
+        id: 'section-actions',
+        title: 'Actions',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+        actions: [
+          { id: 'cancel', label: 'CANCEL', variant: 'cancel' as const, onPress: () => {} },
+          { id: 'agree', label: 'AGREE', variant: 'agree' as const, onPress: handleAgree },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
+    // FOUX_TODO: wire up what the agree button should do when clicked — it buys a house and closes the panel
+    const handleAgree = useCallback(() => {}, []);
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +69,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccFigmaI label={fouxDropLabel} sections={fouxDropSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
