@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccImageDom } from "../components/FouxDropAccImageDom/FouxDropAccImageDom";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,45 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown trigger label
+    const fouxDropdownLabel = 'Menu';
+
+    // FOUX_TODO: replace with the real accordion sections — { id, title, body, startsOpen, actions?: [{ id, label, variant: 'cancel'|'agree', onPress }] }
+    const fouxSections: import('../components/FouxDropAccImageDom/FouxDropAccImageDom').AccordionSection[] = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: false,
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+      },
+      {
+        id: 'section-actions',
+        title: 'Actions',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+        actions: [
+          {
+            id: 'cancel',
+            label: 'Cancel',
+            variant: 'cancel' as const,
+            onPress: () => {},
+          },
+          {
+            id: 'agree',
+            label: 'Agree',
+            variant: 'agree' as const,
+            onPress: () => {},
+          },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +77,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccImageDom dropdownLabel={fouxDropdownLabel} sections={fouxSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
