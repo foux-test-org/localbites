@@ -1,0 +1,91 @@
+.container {
+  background: #0a0a0a;
+  background-image: none;
+  padding: 24px;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.tabBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  background: #262626;
+  border-radius: 17px;
+  padding: 4px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #a0a0a0;
+  background: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.tab.isSelected {
+  font-weight: 500;
+  color: #ffffff;
+  background: #2f2f2f;
+  border: 1px solid #4e4e4e;
+}
+
+.panels {
+  display: grid;
+  width: 100%;
+}
+
+.panel {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  background: #171717;
+  border-radius: 22px;
+  border: 1px solid #262626;
+  padding: 24px;
+}
+
+.panel.isVisible {
+  visibility: visible;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin-bottom: 16px;
+}
+
+.cardStats {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #808080;
+}
