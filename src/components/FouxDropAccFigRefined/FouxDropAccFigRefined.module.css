@@ -1,0 +1,243 @@
+.container {
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.containerAccordionMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  list-style-type: none;
+  background: #0d0d0f;
+  border: none;
+  box-shadow: none;
+  gap: 16px;
+  padding: 32px;
+  overflow: visible;
+}
+
+.menuBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 96px;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  background: #212124;
+  border: 1px solid #2e2e33;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 0px 32px;
+}
+
+.menuBarTitle {
+  line-height: 1.6;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.caret {
+  width: 16px;
+  height: 9px;
+  flex-shrink: 0;
+  display: inline-block;
+  transform-origin: center;
+  color: #ffffff;
+}
+
+.menuBar[aria-expanded="true"] .caret, .headerSection1[aria-expanded="true"] .chevron, .headerSection2[aria-expanded="true"] .chevron, .headerActions[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.accordion {
+  flex-direction: column;
+  align-items: flex-start;
+  background: #141417;
+  border: 1px solid #2e2e33;
+  border-radius: 12px;
+  box-shadow: none;
+  position: absolute;
+  top: calc(100% + 16px);
+  z-index: 100;
+  display: flex;
+  opacity: 0;
+  transform: translateY(-16px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 300ms;
+  left: 32px;
+  right: 32px;
+  min-height: 560px;
+  justify-content: start;
+}
+
+.accordion.isOpen {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 0s 0s;
+}
+
+.headerSection1, .headerSection2, .headerActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 96px;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0px 32px;
+}
+
+.section1Title, .section2Title, .actionsTitle {
+  line-height: 1.6;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.chevron {
+  width: 14px;
+  height: 7px;
+  flex-shrink: 0;
+  display: inline-block;
+  transform-origin: center;
+  color: #ffffff;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  background: #26262a;
+  border: none;
+  box-shadow: none;
+}
+
+.section1Body, .section2Body, .actionsBody {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.section1Body.isOpen, .section2Body.isOpen, .actionsBody.isOpen {
+  grid-template-rows: 1fr;
+}
+
+.section1BodyClip, .section2BodyClip, .actionsBodyClip {
+  width: 100%;
+}
+
+.section1BodyInner, .section2BodyInner {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #9e9ea4;
+  font-size: 19px;
+  font-weight: 400;
+  gap: 16px;
+  padding: 24px 32px;
+}
+
+.actionsBodyInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  gap: 16px;
+  padding: 24px 32px;
+}
+
+.bodyText, .actionsBodyText {
+  line-height: 1.6;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  color: #9e9ea4;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  gap: 8px;
+}
+
+.cancel, .agree {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #8ab4f8;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  padding: 10px 12px;
+}
+
+.cancelLabel, .agreeLabel {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  font-family: Roboto, 'Segoe UI', sans-serif;
+}
+
+.cancel:hover .cancelLabel, .agree:hover .agreeLabel {
+  color: #aecbfa;
+}
+
+.cancel:active .cancelLabel, .agree:active .agreeLabel {
+  color: #d2e3fc;
+}
+
+.section1Body > *, .section2Body > *, .actionsBody > * {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.section1Body > * > *, .section2Body > * > *, .actionsBody > * > * {
+  transform: translateY(-100%);
+  transition: transform 300ms ease;
+}
+
+.section1Body.isOpen > * > *, .section2Body.isOpen > * > *, .actionsBody.isOpen > * > * {
+  transform: translateY(0);
+}
