@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxTabsImage } from "../components/FouxTabsImage/FouxTabsImage";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,35 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real tab list — label, title, description, stats, and startsSelected for the initially active tab
+    const fouxTabsImageTabs = [
+      {
+        label: 'Overview',
+        title: 'Overview',
+        description: 'View your key metrics and recent project activity. Track progress across all your active projects.',
+        stats: 'You have 12 active projects and 3 pending tasks.',
+        startsSelected: true,
+      },
+      {
+        label: 'Analytics',
+        title: 'Analytics',
+        description: 'Explore detailed analytics and performance data for your projects.',
+        stats: 'You have 5 reports generated this week.',
+      },
+      {
+        label: 'Reports',
+        title: 'Reports',
+        description: 'Access and download your generated reports and summaries.',
+        stats: 'You have 8 reports available for download.',
+      },
+      {
+        label: 'Settings',
+        title: 'Settings',
+        description: 'Manage your account preferences and application settings.',
+        stats: 'Last updated 2 days ago.',
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +67,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxTabsImage tabs={fouxTabsImageTabs} />
 
       <section className={styles.section}>
         <div className={styles.container}>
