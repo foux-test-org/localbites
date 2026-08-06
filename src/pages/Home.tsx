@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDropAccFigRefined } from "../components/FouxDropAccFigRefined/FouxDropAccFigRefined";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,35 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real menu label text
+    const fouxMenuLabel = "Menu";
+
+    // FOUX_TODO: replace with the real accordion sections — each needs id, title, body, startsOpen, and optional actions array (each action: id, label, variant 'cancel'|'agree', onPress)
+    const fouxSections: import('../components/FouxDropAccFigRefined/FouxDropAccFigRefined').AccordionSection[] = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+      },
+      {
+        id: 'section-actions',
+        title: 'Actions',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+        actions: [
+          { id: 'cancel', label: 'CANCEL', variant: 'cancel', onPress: () => {} },
+          { id: 'agree', label: 'AGREE', variant: 'agree', onPress: () => {} },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +67,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDropAccFigRefined menuLabel={fouxMenuLabel} sections={fouxSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
