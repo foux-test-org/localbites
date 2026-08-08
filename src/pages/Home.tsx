@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDemoT } from "../components/FouxDemoT/FouxDemoT";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,17 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real rating count for each restaurant card
+    const fouxDemoTRatingCount = 214;
+
+    // FOUX_TODO: replace with the real open/closed status for each restaurant card
+    const fouxDemoTIsOpen = true;
+
+    // FOUX_TODO: replace with the real open-now label text for each restaurant card
+    const fouxDemoTOpenLabel = 'Open now';
+
+    // FOUX_TODO: replace with the real distance string for each restaurant card
+    const fouxDemoTDistance = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +57,16 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxDemoT
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      ratingCount={fouxDemoTRatingCount}
+                                      isOpen={fouxDemoTIsOpen}
+                                      openLabel={fouxDemoTOpenLabel}
+                                      distance={fouxDemoTDistance}
+                                    />
               </div>
             ))}
           </div>
