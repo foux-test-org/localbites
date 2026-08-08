@@ -1,0 +1,175 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  overflow: hidden;
+}
+
+.image {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px;
+  position: relative;
+  align-items: center;
+}
+
+.initial {
+  font-size: 160px;
+  font-weight: 400;
+  color: #fdebdf;
+  font-family: serif;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heroOverlays {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 10px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1;
+}
+
+.heart {
+  background: #fff8eb;
+  border-radius: 27px;
+  width: 36px;
+  height: 36px;
+  border-top-left-radius: 27px;
+  border-top-right-radius: 27px;
+  border-bottom-right-radius: 27px;
+  border-bottom-left-radius: 27px;
+}
+
+.heroBottom {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.openNowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+}
+
+.openDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  gap: 8px;
+}
+
+.meta {
+  display: flex;
+}
+
+.categoryLabel {
+  font-size: 13.6px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-family: serif;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.divider {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin-bottom: 8px;
+}
+
+.footer {
+  background: #f1f1ef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin: -16px;
+  margin-top: 0;
+}
+
+.distanceTime {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9e9a97;
+}
+
+.menuBtn {
+  background: #e8600a;
+  border-radius: 33px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-top: 0;
+  border-top-left-radius: 33px;
+  border-top-right-radius: 33px;
+  border-bottom-right-radius: 33px;
+  border-bottom-left-radius: 33px;
+}
