@@ -1,0 +1,157 @@
+.container {
+  background-color: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  height: 180px;
+  justify-content: center;
+}
+
+.initial {
+  font-size: 160px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+  color: #fdebdf;
+  font-family: serif;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: normal;
+  color: #6b6b6b;
+}
+
+.heart {
+  border-radius: 9999px;
+  background: #ffffff;
+}
+
+.heart.isSelected {
+  color: #e8600a;
+}
+
+.openNowBadge {
+  position: absolute;
+  bottom: -14px;
+  left: 8px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.openNowDot {
+  font-size: 10px;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+.openNowText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+}
+
+.cuisineLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.restaurantName {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #2d2d2d;
+  font-family: serif;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 16px;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin-bottom: 16px;
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceInfo {
+  font-size: 15px;
+  font-weight: normal;
+  color: #9e9a97;
+}
+
+.viewMenu {
+  border-radius: 33px;
+  background-color: #e8600a;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  margin-top: 0;
+}
