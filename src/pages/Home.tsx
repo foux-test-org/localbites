@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDemo3 } from "../components/FouxDemo3/FouxDemo3";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,14 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real review count for the featured restaurant card
+    const fouxDemo3ReviewCount = 214;
+
+    // FOUX_TODO: replace with the real open-status label for the featured restaurant card
+    const fouxDemo3OpenStatusLabel = 'Open now';
+
+    // FOUX_TODO: replace with the real distance and time string for the featured restaurant card
+    const fouxDemo3DistanceTime = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +54,24 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                {restaurant.id === featured[0].id ? (
+                                  <FouxDemo3
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                    reviewCount={fouxDemo3ReviewCount}
+                                    openStatusLabel={fouxDemo3OpenStatusLabel}
+                                    distanceTime={fouxDemo3DistanceTime}
+                                  />
+                                ) : (
+                                  <RestaurantCard
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                  />
+                                )}
               </div>
             ))}
           </div>

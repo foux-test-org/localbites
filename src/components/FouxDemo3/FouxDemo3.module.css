@@ -1,0 +1,183 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 12px;
+  border-radius: 28px;
+}
+
+.heroLetter {
+  font-size: 160px;
+  font-weight: 400;
+  font-style: normal;
+  color: #fdebdf;
+  font-family: Georgia, serif;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1;
+}
+
+.heartBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff8eb;
+  border-radius: 27px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d2d2d;
+  font-size: 1.1rem;
+}
+
+.heartBtn.isSelected {
+  color: #e8600a;
+}
+
+.openBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cuisineLabel {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.6;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.6;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: #6b6b6b;
+  margin-bottom: 16px;
+  -webkit-line-clamp: unset;
+}
+
+.divider {
+  background: #e7e7e5;
+  height: 1px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceTime {
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  color: #9e9a97;
+}
+
+.viewMenuBtn {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #e8600a;
+  border-radius: 33px;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 0;
+}
