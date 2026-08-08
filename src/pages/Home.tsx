@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDemoT } from "../components/FouxDemoT/FouxDemoT";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,16 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real restaurant extra metadata — ratingCount, isOpenNow, openNowLabel, distance per restaurant id
+    const restaurantMetaMap: Record<string, import('../components/FouxDemoT/FouxDemoT').FouxDemoTRestaurantMeta> = {
+      ...Object.fromEntries(
+        restaurants.slice(0, 5).map((r) => [
+          r.id,
+          { ratingCount: 0, isOpenNow: false, openNowLabel: 'Open now', distance: '' },
+        ])
+      ),
+    };
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +56,13 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxDemoT
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      meta={restaurantMetaMap[restaurant.id]}
+                                    />
               </div>
             ))}
           </div>
