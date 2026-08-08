@@ -1,0 +1,189 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  padding: 12px;
+}
+
+.largeLetter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 160px;
+  font-weight: 400;
+  font-family: Georgia, serif;
+  color: #fdebdf;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBottom {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 10px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1;
+}
+
+.heartBtn {
+  background: #fff8eb;
+  border-radius: 27px;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  top: auto;
+  right: auto;
+  position: relative;
+}
+
+.heartBtn.isSelected {
+  color: #e8600a;
+}
+
+.openBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: 12px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: -4px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-top: 4px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.distance {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9e9a97;
+}
+
+.menuBtn {
+  background-color: #e8600a;
+  border-radius: 33px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-top: 0;
+  border-top-left-radius: 33px;
+  border-top-right-radius: 33px;
+  border-bottom-right-radius: 33px;
+  border-bottom-left-radius: 33px;
+}
