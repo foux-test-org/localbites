@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxParityTest2 } from "../components/FouxParityTest2/FouxParityTest2";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,11 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real review count per restaurant — number of user reviews
+    const fouxReviewCount = 214;
+
+    // FOUX_TODO: replace with distance and travel time calculated from user location
+    const fouxDistanceLabel = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +51,14 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxParityTest2
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      reviewCount={fouxReviewCount}
+                                      distanceLabel={fouxDistanceLabel}
+                                    />
               </div>
             ))}
           </div>
