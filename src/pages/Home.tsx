@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
 import { Hero } from '../components/Hero/Hero';
-import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxOptTestStaticAll } from "../components/FouxOptTestStaticAll/FouxOptTestStaticAll";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,8 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real distance/time info keyed by restaurant id — { [restaurantId: string]: string }
+    const restaurantDistanceInfo: Record<string, string> = {};
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +47,13 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxOptTestStaticAll
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      distanceInfo={restaurantDistanceInfo[restaurant.id]}
+                                    />
               </div>
             ))}
           </div>
