@@ -1,0 +1,173 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px 28px 0 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 180px;
+  display: flex;
+}
+
+.heroOverlaysTop {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heroOverlaysBottom {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 12px;
+}
+
+.ratingStar {
+  color: #e8600a;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.heartBtn {
+  background: #fff8eb;
+  border-radius: 27px;
+  width: 36px;
+  height: 36px;
+  position: static;
+  top: auto;
+  right: auto;
+}
+
+.heartBtn.isSelected {
+  color: #e8600a;
+}
+
+.heroLetter {
+  font-size: 140px;
+  font-weight: 400;
+  color: #fdebdf;
+  font-family: serif;
+  line-height: 1;
+  position: static;
+}
+
+.openNowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openNowText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryLabel {
+  font-size: 13.6px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-family: serif;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-top: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.separator {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin-top: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.distanceInfo {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9e9a97;
+}
+
+.menuBtn {
+  border-radius: 33px;
+  background: #e8600a;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  margin-top: 0;
+}
