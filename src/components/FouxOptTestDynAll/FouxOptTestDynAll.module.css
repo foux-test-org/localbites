@@ -1,0 +1,179 @@
+.container {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.08);
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(124deg, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h - 6.8) 83% 56%) 0%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) h 89% 60%) 50%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h + 6.7) 98% 63%) 100%);
+  border-radius: 33px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.04);
+  height: 240px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoLetter {
+  font-size: 140px;
+  font-weight: 400;
+  color: #fbecd6;
+  line-height: 1;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.05);
+  border: none;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8610a;
+}
+
+.ratingScore {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.container .favoriteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
+  border: none;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 26px;
+  box-shadow: 2px 0px 18px rgba(0, 0, 0, 0.04);
+  border: none;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusDot {
+  font-size: 10px;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+.statusText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryLabel {
+  font-size: 12.8px;
+  font-weight: 500;
+  color: #a09a92;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.container .restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #e0e0de;
+  margin: 8px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceInfo {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a09a92;
+  line-height: 1.6;
+}
+
+.container .viewMenuBtn {
+  background: #e8610a;
+  border-radius: 36px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.16);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 10px 24px;
+  margin-top: 0;
+}
+
+.container .favoriteBtn {
+  color: var(--color-text-muted);
+}
+
+.container .viewMenuBtn {
+  color: var(--color-white);
+}
