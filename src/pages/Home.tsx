@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxOptTestStaticSingle } from "../components/FouxOptTestStaticSingle/FouxOptTestStaticSingle";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,14 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real review count for the featured restaurant
+    const fouxOptTestStaticSingleReviewCount = 214;
+
+    // FOUX_TODO: replace with open/closed status driven by live hours data
+    const fouxOptTestStaticSingleStatusText = 'Open now';
+
+    // FOUX_TODO: replace with real distance and estimated time driven by user location
+    const fouxOptTestStaticSingleDistance = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +54,24 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                {restaurant.id === featured[0].id ? (
+                                  <FouxOptTestStaticSingle
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                    reviewCount={fouxOptTestStaticSingleReviewCount}
+                                    statusText={fouxOptTestStaticSingleStatusText}
+                                    distance={fouxOptTestStaticSingleDistance}
+                                  />
+                                ) : (
+                                  <RestaurantCard
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                  />
+                                )}
               </div>
             ))}
           </div>
