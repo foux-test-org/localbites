@@ -1,0 +1,179 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px;
+  height: 180px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.initial {
+  font-size: 160px;
+  font-weight: 400;
+  color: #fdebdf;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starIcon {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1;
+}
+
+.heartBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff8eb;
+  border-radius: 9999px;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  border: none;
+}
+
+.heartBtn.isSelected {
+  color: #e8600a;
+}
+
+.openNowBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openNowText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: 16px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin-bottom: -4px;
+}
+
+.restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  height: 1px;
+  background: #e7e7e5;
+  margin-bottom: 12px;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceInfo {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9e9a97;
+  line-height: 1.6;
+}
+
+.menuBtn {
+  border-radius: 33px;
+  background: #e8600a;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  border: none;
+}
+
+.heartBtn {
+  color: var(--color-text-muted);
+}
+
+.menuBtn {
+  color: var(--color-white);
+}
