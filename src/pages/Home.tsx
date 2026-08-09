@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDemotest } from "../components/FouxDemotest/FouxDemotest";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,8 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real distance and travel time display data — { restaurantId: string, label: string } per entry
+    const featuredDistanceInfo = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +48,13 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxDemotest
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      distanceInfo={featuredDistanceInfo}
+                                    />
               </div>
             ))}
           </div>
