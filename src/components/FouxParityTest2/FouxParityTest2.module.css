@@ -1,0 +1,200 @@
+.container {
+  background: #ffffff;
+  border-radius: 33px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  height: 200px;
+  background: linear-gradient(124deg, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h - 6.8) 83% 56%) 0%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) h 89% 60%) 50%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h + 6.7) 98% 63%) 100%);
+  border-radius: 33px 33px 0px 0px;
+  box-shadow: 0px -2px 2px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+  padding: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.initial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 180px;
+  font-weight: 400;
+  color: #fbecd6;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroRow1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroRow2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  padding: 6px 12px;
+  box-shadow: 0px 2px 18px rgba(0,0,0,0.05);
+  border: none;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8610a;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.heartButton {
+  width: 36px;
+  height: 36px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0,0,0,0.07);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  top: auto;
+  right: auto;
+  font-size: 19.2px;
+}
+
+.openNowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f9f9f7;
+  border-radius: 26px;
+  padding: 6px 12px;
+  box-shadow: 2px 0px 18px rgba(0,0,0,0.04);
+  border: none;
+}
+
+.openNowDot {
+  font-size: 10px;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+.openNowText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  padding: 20px 20px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.categoryLabel {
+  font-size: 13.6px;
+  font-weight: 500;
+  color: #a09a92;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.restaurantName {
+  font-size: 27.2px;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin-bottom: 16px;
+}
+
+.footerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceInfo {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a09a92;
+  line-height: 1.6;
+}
+
+.viewMenuButton {
+  font-size: 16px;
+  font-weight: 600;
+  background: #e8610a;
+  border-radius: 36px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0px 2px 24px rgba(0,0,0,0.16);
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+.heartButton {
+  color: var(--color-text-muted);
+}
+
+.viewMenuButton {
+  color: var(--color-white);
+}
