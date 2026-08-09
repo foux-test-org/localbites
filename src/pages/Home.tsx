@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
 import { Hero } from '../components/Hero/Hero';
-import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxStaticAll } from "../components/FouxStaticAll/FouxStaticAll";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,21 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real card content — logoLetter, favoriteButton, favoritedButton, ratingStar, ratingNumber, ratingCount (live), title, categoryLabel, description, ctaButton, statusText (live open/closed), distanceInfo (live distance and travel time)
+    const fouxStaticAllContent: FouxStaticAllContent = {
+      logoLetter: 'T',
+      favoriteButton: '\u2661',
+      favoritedButton: '\u2665',
+      ratingStar: '\u2605',
+      ratingNumber: '4.8',
+      ratingCount: '(214)',
+      title: 'Trattoria Nonna',
+      categoryLabel: 'ITALIAN \u00b7 $$',
+      description: 'Hand-rolled pasta and wood-fired focaccia in a twelve-table room off the market square.',
+      ctaButton: 'View Menu \u2192',
+      statusText: 'Open now',
+      distanceInfo: '12 min \u00b7 0.4 mi',
+    };
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +60,13 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxStaticAll
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      content={fouxStaticAllContent}
+                                    />
               </div>
             ))}
           </div>

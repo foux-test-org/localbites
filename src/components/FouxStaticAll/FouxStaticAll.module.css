@@ -1,0 +1,197 @@
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  border: none;
+  overflow: hidden;
+}
+
+.heroImage {
+  background: linear-gradient(124deg, #ec8934 0%, #f4a63c 50%, #fdc344 100%);
+  border-radius: 33px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.04);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logoLetter {
+  font-size: 140px;
+  font-weight: 400;
+  color: #fbecd6;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8610a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1;
+}
+
+.container .favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.statusBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 26px;
+  box-shadow: 2px 0px 18px rgba(0, 0, 0, 0.04);
+  border: none;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusDot {
+  background: #4CAF50;
+  border-radius: 9999px;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-size: 13.6px;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.contentArea {
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryLabel {
+  font-size: 13.6px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.6;
+  color: #a09a92;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  margin-top: 0;
+}
+
+.description {
+  font-size: 13.6px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: #6b6b6b;
+  margin-bottom: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  background: #e0e0de;
+  height: 1px;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+
+.distanceInfo {
+  font-size: 13.6px;
+  font-weight: 400;
+  color: #a09a92;
+  line-height: 1.6;
+}
+
+.container .ctaButton {
+  background: #e8610a;
+  border-radius: 36px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.16);
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.container .favoriteButton {
+  color: var(--color-text-muted);
+}
+
+.container .ctaButton {
+  color: var(--color-white);
+}
