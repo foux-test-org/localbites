@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxTestReusedPropAppearance } from "../components/FouxTestReusedPropAppearance/FouxTestReusedPropAppearance";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,14 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real rating count per restaurant — number of reviews formatted as e.g. "(214)"
+    const featuredCardRatingCount = '(214)';
+
+    // FOUX_TODO: replace with the real distance/time label per restaurant — e.g. "12 min · 0.4 mi"
+    const featuredCardDistanceLabel = '12 min · 0.4 mi';
+
+    // FOUX_TODO: replace with real open/closed status driven by live hours data — e.g. "Open now"
+    const featuredCardOpenNowLabel = 'Open now';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -45,12 +54,15 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxTestReusedPropAppearance
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      ratingCount={featuredCardRatingCount}
+                                      distanceLabel={featuredCardDistanceLabel}
+                                      openNowLabel={featuredCardOpenNowLabel}
+                                    />
               </div>
             ))}
           </div>

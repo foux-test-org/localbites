@@ -1,0 +1,167 @@
+.container {
+  background: #f9f9f7;
+  border-radius: 28px;
+  border: none;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(123deg, #ec8933 0%, #f5a63c 50%, #fdc345 100%);
+  border-radius: 28px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroLetter {
+  font-size: 160px;
+  font-weight: 400;
+  color: #fdebdf;
+  font-family: serif;
+  line-height: 1;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #f9f9f7;
+  border-radius: 21px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8600a;
+  line-height: 1;
+}
+
+.ratingNumber {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff8eb;
+  border-radius: 27px;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  border: none;
+}
+
+.heart.isSelected {
+  color: #e8600a;
+}
+
+.openNow {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #fff8eb;
+  border-radius: 18px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.greenDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #4CAF50;
+  flex-shrink: 0;
+}
+
+.openNowText {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.body {
+  background: #ffffff;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.category {
+  font-size: 13.6px;
+  font-weight: 500;
+  color: #9e9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  font-family: serif;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  background: #e7e7e5;
+  height: 1px;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1ef;
+  margin: 0 calc(-1 * var(--spacing-md)) calc(-1 * var(--spacing-md));
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.distance {
+  font-size: 15px;
+  font-weight: 400;
+  color: #9e9a97;
+}
+
+.menuBtn {
+  border-radius: 33px;
+  background: #e8600a;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 0;
+}
