@@ -1,0 +1,194 @@
+.container {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.08);
+  border: none;
+  overflow: hidden;
+}
+
+.heroImage {
+  background: linear-gradient(124deg, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h - 6.8) 83% 56%) 0%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) h 89% 60%) 50%, hsl(from var(--foux-item-color, hsl(34.5 100% 50%)) calc(h + 6.7) 98% 63%) 100%);
+  border-radius: 33px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.04);
+  height: 180px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.logoLetter {
+  font-size: 120px;
+  font-weight: 400;
+  color: #fbecd6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 0px 25px;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.05);
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8610a;
+  line-height: 1;
+}
+
+.ratingScore {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.ratingCount {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.container .favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #f9f9f7;
+  border-radius: 26px;
+  box-shadow: 2px 0px 18px rgba(0, 0, 0, 0.04);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #4CAF50;
+  border-radius: 9999px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.contentArea {
+  background: #ffffff;
+  padding: 16px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryLabel {
+  font-size: 11.2px;
+  font-weight: 500;
+  color: #a09a92;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  display: block;
+}
+
+.restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-top: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  height: 1px;
+  background: #e0e0de;
+  border: none;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distanceInfo {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a09a92;
+  line-height: 1.6;
+}
+
+.container .ctaButton {
+  background: #e8610a;
+  border-radius: 36px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.16);
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+.container .favoriteButton {
+  color: var(--color-text-muted);
+}
+
+.container .ctaButton {
+  color: var(--color-white);
+}
