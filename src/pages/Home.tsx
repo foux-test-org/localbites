@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
 import { Hero } from '../components/Hero/Hero';
-import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxValueIndexFixTest } from "../components/FouxValueIndexFixTest/FouxValueIndexFixTest";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,14 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real review count labels per featured restaurant
+    const fouxCounts = ["(214)", "(229)", "(178)", "(257)", "(205)", "(154)", "(233)", "(182)"];
+
+    // FOUX_TODO: replace with the real distance/time labels per featured restaurant
+    const fouxDistances = ["12 min · 0.4 mi", "13 min · 0.4 mi", "10 min · 0.3 mi", "14 min · 0.5 mi", "12 min · 0.4 mi", "9 min · 0.3 mi", "13 min · 0.4 mi", "10 min · 0.3 mi"];
+
+    // FOUX_TODO: add FouxValueIndexFixTest to the import list alongside RestaurantCard
+    // import { FouxValueIndexFixTest } from '../components/FouxValueIndexFixTest/FouxValueIndexFixTest';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -43,14 +51,16 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Featured Restaurants</h2>
           <div className={styles.featuredRow}>
-            {featured.map((restaurant) => (
+            {featured.map((restaurant, index) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                <FouxValueIndexFixTest
+                                      restaurant={restaurant}
+                                      isFavorite={isFavorite(restaurant.id)}
+                                      onFavorite={onFavorite}
+                                      onViewMenu={onViewMenu}
+                                      count={fouxCounts[index % fouxCounts.length]}
+                                      distance={fouxDistances[index % fouxDistances.length]}
+                                    />
               </div>
             ))}
           </div>
