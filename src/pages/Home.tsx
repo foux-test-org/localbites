@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxSingleDynDesign } from "../components/FouxSingleDynDesign/FouxSingleDynDesign";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +25,8 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real distance info for the featured card
+    const fouxDistanceInfo = '12 min · 0.4 mi';
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -43,14 +46,24 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Featured Restaurants</h2>
           <div className={styles.featuredRow}>
-            {featured.map((restaurant) => (
+            {featured.map((restaurant, index) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                {index === 0 ? (
+                                  <FouxSingleDynDesign
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                    distanceInfo={fouxDistanceInfo}
+                                  />
+                                ) : (
+                                  <RestaurantCard
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                  />
+                                )}
               </div>
             ))}
           </div>
