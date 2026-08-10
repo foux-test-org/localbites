@@ -1,0 +1,186 @@
+.container {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.08);
+  border: none;
+  overflow: hidden;
+}
+
+.heroImage {
+  background: linear-gradient(124deg, #ec8934 0%, #f4a63c 50%, #fdc344 100%);
+  border-radius: 33px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.04);
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoLetter {
+  font-size: 120px;
+  font-weight: 400;
+  color: #fbecd6;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingStar {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8610a;
+  line-height: 1.6;
+}
+
+.ratingScore {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.ratingCount {
+  font-size: 13.6px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.container .favoriteButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #f9f9f7;
+  border-radius: 27px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
+  width: 44px;
+  height: 44px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.openNowBadge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #f9f9f7;
+  border-radius: 26px;
+  box-shadow: 2px 0px 18px rgba(0, 0, 0, 0.04);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.openNowDot {
+  width: 10px;
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.openNowText {
+  font-size: 13.6px;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.contentArea {
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryLabel {
+  font-size: 13.6px;
+  font-weight: 500;
+  color: #a09a92;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+.container .restaurantName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 1.6;
+  margin-top: -4px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin-top: 16px;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #e0e0de;
+  margin-top: 8px;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.distanceInfo {
+  font-size: 13.6px;
+  font-weight: 400;
+  color: #a09a92;
+  line-height: 1.6;
+}
+
+.container .viewMenuButton {
+  background: #e8610a;
+  border-radius: 36px;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.16);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.container .favoriteButton {
+  color: var(--color-text-muted);
+}
+
+.container .viewMenuButton {
+  color: var(--color-white);
+}
