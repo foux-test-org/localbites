@@ -6,6 +6,7 @@ import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxStaticSingle } from "../components/FouxStaticSingle/FouxStaticSingle";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -45,12 +46,21 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
               <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
+                {restaurant.id === featured[0].id ? (
+                                  <FouxStaticSingle
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                  />
+                                ) : (
+                                  <RestaurantCard
+                                    restaurant={restaurant}
+                                    isFavorite={isFavorite(restaurant.id)}
+                                    onFavorite={onFavorite}
+                                    onViewMenu={onViewMenu}
+                                  />
+                                )}
               </div>
             ))}
           </div>
