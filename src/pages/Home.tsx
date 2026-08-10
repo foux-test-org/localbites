@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
 import { Hero } from '../components/Hero/Hero';
-import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDynAllOrig } from "../components/FouxDynAllOrig/FouxDynAllOrig";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,11 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real rating count data — one string per restaurant slot
+    const dynAllOrigRatingCounts = ["(214)", "(229)", "(178)", "(257)", "(205)", "(154)", "(233)", "(182)"];
+
+    // FOUX_TODO: replace with the real distance info data — one string per restaurant slot
+    const dynAllOrigDistanceInfos = ["12 min · 0.4 mi", "13 min · 0.4 mi", "10 min · 0.3 mi", "14 min · 0.5 mi", "12 min · 0.4 mi", "9 min · 0.3 mi", "13 min · 0.4 mi", "10 min · 0.3 mi"];
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -44,14 +49,14 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
           <h2 className={styles.sectionTitle}>Featured Restaurants</h2>
           <div className={styles.featuredRow}>
             {featured.map((restaurant) => (
-              <div key={restaurant.id} className={styles.featuredCard}>
-                <RestaurantCard
-                  restaurant={restaurant}
-                  isFavorite={isFavorite(restaurant.id)}
-                  onFavorite={onFavorite}
-                  onViewMenu={onViewMenu}
-                />
-              </div>
+              <FouxDynAllOrig
+                              restaurants={featured}
+                              isFavorite={isFavorite}
+                              onFavorite={onFavorite}
+                              onViewMenu={onViewMenu}
+                              ratingCounts={dynAllOrigRatingCounts}
+                              distanceInfos={dynAllOrigDistanceInfos}
+                            />
             ))}
           </div>
         </div>
