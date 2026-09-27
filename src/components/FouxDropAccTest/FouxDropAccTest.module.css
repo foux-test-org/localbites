@@ -1,0 +1,139 @@
+.container {
+  background: #0d0d0f;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.menuTriggerWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background: #212124;
+  border-radius: 9px;
+  box-shadow: 0px 3px 30px rgba(0,0,0,0.41);
+  border: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.menuHeaderText {
+  font-size: 19px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+.menuHeaderIcon, .section1Chevron, .section2Chevron, .actionsChevron {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+  color: #e5e5e5;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.menuHeader[aria-expanded="true"] .menuHeaderIcon, .section1Header[aria-expanded="true"] .section1Chevron, .section2Header[aria-expanded="true"] .section2Chevron, .actionsHeader[aria-expanded="true"] .actionsChevron {
+  transform: rotate(180deg);
+}
+
+.dropdownPanel {
+  display: none;
+  position: absolute;
+  top: calc(100% - 16px);
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+}
+
+.dropdownPanel.isOpen, .section1Body.isOpen, .section2Body.isOpen, .actionsBody.isOpen {
+  display: block;
+}
+
+.accordionPanel {
+  background: #141417;
+  border-radius: 8px;
+  box-shadow: 0px -3px 38px rgba(0,0,0,0.50);
+  border: 1px solid #2e2e32;
+  overflow: hidden;
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background: #141417;
+  border: none;
+  cursor: pointer;
+}
+
+.section1Label, .section2Label, .actionsLabel {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+.section1Body, .section2Body, .actionsBody {
+  display: none;
+  width: 100%;
+}
+
+.section1BodyClip, .section2BodyClip, .actionsBodyClip {
+  width: 100%;
+}
+
+.section1BodyInner, .section2BodyInner, .actionsBodyInner {
+  padding: 16px;
+  background: #141417;
+}
+
+.sectionBodyContent {
+  color: #e5e5e5;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.section1CloseAction, .section2CloseAction, .actionsCloseAction {
+  padding: 8px 16px;
+  background: #212124;
+  color: #e5e5e5;
+  border: 1px solid #2e2e32;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sectionDivider1, .sectionDivider2 {
+  height: 1px;
+  background: #28282b;
+  width: 100%;
+}
+
+.bottomBorderLine {
+  height: 2px;
+  background: #afafb0;
+  width: 100%;
+}
