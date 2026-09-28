@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
-import { Hero } from '../components/Hero/Hero';
 import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDaclosedWithDesc } from "../components/FouxDaclosedWithDesc/FouxDaclosedWithDesc";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,40 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown trigger label
+    const fouxDropdownLabel = 'Menu';
+
+    // FOUX_TODO: replace with the real dropdown sections — each needs id, title, body, optional startsOpen, and optional controls (each control needs id, label, and onPress handler for what it should do when clicked: closes the panel and sends an action)
+    const fouxDropdownSections: import('../components/FouxDaclosedWithDesc/FouxDaclosedWithDesc').AccordionSection[] = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: null,
+        startsOpen: false,
+        controls: [
+          { id: 'section-1-action', label: 'Section 1 Action', onPress: () => {} },
+        ],
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: null,
+        startsOpen: false,
+        controls: [
+          { id: 'section-2-action', label: 'Section 2 Action', onPress: () => {} },
+        ],
+      },
+      {
+        id: 'actions',
+        title: 'Actions',
+        body: null,
+        startsOpen: false,
+        controls: [
+          { id: 'actions-action', label: 'Actions Action', onPress: () => {} },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +71,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDaclosedWithDesc label={fouxDropdownLabel} sections={fouxDropdownSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
