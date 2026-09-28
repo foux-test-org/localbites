@@ -1,0 +1,150 @@
+.container {
+  background: #2a2e37;
+  border-radius: 3px;
+  box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.50);
+  border: 1px solid #13171c;
+  padding: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 11px;
+  background: #1d1f26;
+  box-shadow: 0px 3px 74px rgba(0, 0, 0, 0.50);
+  border: 1px solid #2a2e37;
+  padding: 12px 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.dropdownMenuText {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #e8e9ec;
+}
+
+.dropdownArrow {
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9a9fa9;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.dropdownMenu.isOpen .dropdownArrow, .section1Header.isSelected .section1Chevron, .section2Header.isSelected .section2Chevron, .actionsHeader.isSelected .actionsChevron {
+  transform: rotate(180deg);
+}
+
+.menuPanel {
+  display: none;
+  border-radius: 12px;
+  background: #13171c;
+  box-shadow: 0px -3px 74px rgba(0, 0, 0, 0.50);
+  border: 1px solid #2a2e37;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+}
+
+.menuPanel.isOpen, .section1Body.isVisible, .section2Body.isVisible, .actionsBody.isVisible {
+  display: block;
+}
+
+.section1Header, .section2Header, .actionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #13171c;
+  border: 1px solid #2a2e37;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.section1Header {
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0px -3px 74px rgba(0, 0, 0, 0.50);
+}
+
+.section2Header, .actionsHeader {
+  border-radius: 0;
+}
+
+.section1HeaderText, .section2HeaderText, .actionsHeaderText {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #e8e9ec;
+}
+
+.section1Chevron, .section2Chevron, .actionsChevron {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #9a9fa9;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.section1Body, .section2Body, .actionsBody {
+  display: none;
+  width: 100%;
+}
+
+.section1Clip, .section2Clip, .actionsClip {
+  overflow: hidden;
+}
+
+.section1Inner, .section2Inner, .actionsInner {
+  background: #13171c;
+  border: 1px solid #2a2e37;
+  padding: 8px 16px;
+}
+
+.section1ContentText, .section2Content, .actionsContent {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #6e727c;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cancelButton, .agreeButton {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #7bafff;
+  text-transform: uppercase;
+  border-radius: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
