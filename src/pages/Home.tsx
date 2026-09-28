@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
-import { Hero } from '../components/Hero/Hero';
 import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDaclosed } from "../components/FouxDaclosed/FouxDaclosed";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,16 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown menu trigger label
+    const fouxDaclosedMenuLabel = "Menu";
+
+    // FOUX_TODO: replace with the real accordion sections — each needs id, title, body (ReactNode), and optional startsOpen
+    const fouxDaclosedSections = [
+      { id: 'section-1', title: 'Section 1', body: 'Section 1 content', startsOpen: false },
+      { id: 'section-2', title: 'Section 2', body: 'Section 2 content', startsOpen: false },
+      { id: 'actions', title: 'Actions', body: 'Actions content', startsOpen: false },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +47,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDaclosed menuLabel={fouxDaclosedMenuLabel} sections={fouxDaclosedSections} />
 
       <section className={styles.section}>
         <div className={styles.container}>
