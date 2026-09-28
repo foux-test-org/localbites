@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
-import { Hero } from '../components/Hero/Hero';
 import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxDaopenDesc } from "../components/FouxDaopenDesc/FouxDaopenDesc";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,37 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real dropdown label text
+    const fouxDaopenDescLabel = 'Menu';
+
+    // FOUX_TODO: replace with the real sections list — each entry needs id, title, body, startsOpen, and optional actions array (each action: id, label, variant ('cancel'|'agree'), onPress)
+    const fouxDaopenDescSections = [
+      {
+        id: 'section-1',
+        title: 'Section 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: false,
+      },
+      {
+        id: 'section-2',
+        title: 'Section 2',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+      },
+      {
+        id: 'section-actions',
+        title: 'Actions',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        startsOpen: true,
+        actions: [
+          { id: 'cancel', label: 'CANCEL', variant: 'cancel' as const, onPress: () => {} },
+          { id: 'agree', label: 'AGREE', variant: 'agree' as const, onPress: () => {} },
+        ],
+      },
+    ];
+    // FOUX_TODO: end
+    // FOUX_TODO: wire up what the Agree button should do when clicked — both agree and close should call endpoints on the server
+    const handleAgree = useCallback(() => {}, []);
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +68,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxDaopenDesc label={fouxDaopenDescLabel} sections={fouxDaopenDescSections} onAgree={handleAgree} />
 
       <section className={styles.section}>
         <div className={styles.container}>
