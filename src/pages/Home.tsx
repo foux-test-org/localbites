@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { restaurants, Restaurant } from '../data/restaurants';
-import { Hero } from '../components/Hero/Hero';
 import { RestaurantCard } from '../components/RestaurantCard/RestaurantCard';
 import { CategoryTile } from '../components/CategoryTile/CategoryTile';
 import { Newsletter } from '../components/Newsletter/Newsletter';
 import styles from './Home.module.css';
+import { FouxTabsAfterGraph } from "../components/FouxTabsAfterGraph/FouxTabsAfterGraph";
 
 interface HomeProps {
   isFavorite: (id: string) => boolean;
@@ -24,6 +24,39 @@ const categories = [
 ];
 
 export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps): React.ReactNode {
+    // FOUX_TODO: replace with the real tab list — id, label, title, description, summary, and startsSelected for the default tab
+    const fouxTabsAfterGraphTabs = [
+      {
+        id: 'overview',
+        label: 'Overview',
+        title: 'Overview',
+        description: 'View your key metrics and recent project activity. Track progress across all your active projects.',
+        summary: 'You have 12 active projects and 3 pending tasks.',
+        startsSelected: true,
+      },
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        title: 'Analytics',
+        description: 'View your key metrics and recent project activity. Track progress across all your active projects.',
+        summary: 'You have 12 active projects and 3 pending tasks.',
+      },
+      {
+        id: 'reports',
+        label: 'Reports',
+        title: 'Reports',
+        description: 'View your key metrics and recent project activity. Track progress across all your active projects.',
+        summary: 'You have 12 active projects and 3 pending tasks.',
+      },
+      {
+        id: 'settings',
+        label: 'Settings',
+        title: 'Settings',
+        description: 'View your key metrics and recent project activity. Track progress across all your active projects.',
+        summary: 'You have 12 active projects and 3 pending tasks.',
+      },
+    ];
+    // FOUX_TODO: end
   const navigate = useNavigate();
   const featured = restaurants.slice(0, 5);
 
@@ -37,7 +70,7 @@ export function Home({ isFavorite, onFavorite, onViewMenu, onToast }: HomeProps)
 
   return (
     <div>
-      <Hero />
+      <FouxTabsAfterGraph tabs={fouxTabsAfterGraphTabs} />
 
       <section className={styles.section}>
         <div className={styles.container}>
